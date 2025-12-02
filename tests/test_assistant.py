@@ -1,15 +1,15 @@
 import asyncio
 
-from daneel.clients import GraphClient, MemobaseClient, RagdollClient
+from daneel.clients import InMemoryGraphClient, InMemoryMemobaseClient, InMemoryRagdollClient
 from daneel.graph_builder import build_assistant_graph
 from daneel.nodes import NodeContext
 
 
 def test_graph_runs_end_to_end():
     ctx = NodeContext(
-        memobase=MemobaseClient(),
-        ragdoll=RagdollClient(),
-        graph=GraphClient(),
+        memobase=InMemoryMemobaseClient(),
+        ragdoll=InMemoryRagdollClient(),
+        graph=InMemoryGraphClient(),
         tools=None,  # type: ignore[arg-type]
     )
     graph = build_assistant_graph(ctx)

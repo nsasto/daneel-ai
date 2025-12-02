@@ -169,6 +169,5 @@ def build_assistant_graph(ctx: NodeContext) -> Any:
     graph.add_edge("run_tools", "ingest_tool_results")
     graph.add_edge("ingest_tool_results", "generate_answer")
     graph.add_edge("generate_answer", END)
-    graph.set_finish_point(END) if hasattr(graph, "set_finish_point") else None
 
     return graph.compile()
