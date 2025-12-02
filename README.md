@@ -76,6 +76,17 @@ Expect rough edges, rapid change, and exploration.
 Setup docs coming soon as things stabilize.
 Want to experiment early? Open an issue.
 
+### Quick start (skeleton)
+
+- Install: `pip install -e .[dev,graph]`
+- Run tests: `pytest`
+- Start API: `uvicorn daneel.service:app --reload`
+- Configure clients via env:
+  - Memobase: `MEMOBASE_URL`, `MEMOBASE_API_KEY`, `MEMOBASE_TIMEOUT`
+  - RAGdoll: `RAGDOLL_URL`, `RAGDOLL_API_KEY`, `RAGDOLL_TIMEOUT`
+  - Graph RAG: `GRAPH_RAG_URL`, `GRAPH_RAG_API_KEY`, `GRAPH_RAG_TIMEOUT`
+- If URLs are not set, in-memory clients are used (good for local dev).
+
 ## Tech Ingredients (moving target)
 
 - LLMs (mix of OSS + commercial)
